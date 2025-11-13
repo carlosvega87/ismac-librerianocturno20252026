@@ -26,10 +26,10 @@ public class LibroPrincipal {
         libro.setPortada("blanca");
         libro.setPresentacion("pequeña");
         libro.setPrecio(12.50);
-
-libro.setCategoria(categoria);
-libro.setAutor(autor);
-System.out.println(libro.toString());
+        //inyeccion de dependencias
+        libro.setCategoria(categoria);
+        libro.setAutor(autor);
+        System.out.println(libro.toString());
 
 
 

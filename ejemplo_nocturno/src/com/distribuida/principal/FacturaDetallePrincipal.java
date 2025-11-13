@@ -17,7 +17,7 @@ public class FacturaDetallePrincipal {
         factura.setTotalNeto(100.00);
         factura.setIva(15.00);
         factura.setTotal(115.00);
-
+        //inyeccion de dependencias
         factura.setCliente(cliente);
 
 
