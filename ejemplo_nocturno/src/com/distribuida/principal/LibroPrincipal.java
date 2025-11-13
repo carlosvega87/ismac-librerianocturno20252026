@@ -30,9 +30,5 @@ public class LibroPrincipal {
         libro.setCategoria(categoria);
         libro.setAutor(autor);
         System.out.println(libro.toString());
-
-
-
-
     }
 }

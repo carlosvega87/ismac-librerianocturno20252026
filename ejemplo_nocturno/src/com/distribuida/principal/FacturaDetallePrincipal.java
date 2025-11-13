@@ -37,6 +37,9 @@ public class FacturaDetallePrincipal {
         libro.setPresentacion("pequeña");
         libro.setPrecio(12.50);
 
+        libro.setAutor(autor);
+        libro.setCategoria(categoria);
+
         FacturaDetalle facturaDetalle = new FacturaDetalle();
         facturaDetalle.setIdFacDetalle(1);
         facturaDetalle.setCantidad(10);
