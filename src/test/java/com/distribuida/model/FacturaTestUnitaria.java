@@ -91,7 +91,7 @@ factura.setTotal(115.00);
                 ()-> assertEquals(-100.00,factura.getTotal())
         );
 
-        //vALIDAR LOS CAMPOS NEGATIVOS, SOLO DEBERIA EXISTIR VALORES POSITIVOS EN LA FACTURA
+        //vALIDAR LOS CAMPOS NEGATIVOS, SOLO DEBERIA EXISTIR VALORES POSITIVOS EN LA factura
 
 }
 
