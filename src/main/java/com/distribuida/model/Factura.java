@@ -10,7 +10,7 @@ public class Factura {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column (name = "id_factura")
     private  int idFactura;
-    @Column (name = "mun_factura")
+    @Column (name = "num_factura")
     private String numFactura;
     @Column (name = "fecha")
     private Date fecha;
