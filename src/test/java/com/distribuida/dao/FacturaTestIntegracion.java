@@ -38,9 +38,9 @@ public class FacturaTestIntegracion {
     @Test
     public void testFacturaFindOne(){
         Optional<Factura> factura = facturaRepository.findById(1);
-assertTrue(factura.isPresent());
-assertEquals("FAC-0001",factura.orElse(null).getNumFactura());
-assertEquals(150.96,factura.orElse(null).getTotal());
+        assertTrue(factura.isPresent());
+        assertEquals("FAC-0001",factura.orElse(null).getNumFactura());
+        assertEquals(150.96,factura.orElse(null).getTotal());
 
 System.out.println(factura);
     }
