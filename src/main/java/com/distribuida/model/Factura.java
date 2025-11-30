@@ -39,6 +39,10 @@ public Factura(){}
         this.numFactura = numFactura;
     }
 
+    public static Factura orElse(Object o) {
+        return null;
+    }
+
     public int getIdFactura() {
         return idFactura;
     }
