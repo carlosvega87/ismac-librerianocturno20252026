@@ -44,7 +44,7 @@ private FacturaRepository facturaRepository;
         System.out.println(facturaDetalle);
     }
     @Test
-    public void testFacturaSave(){
+    public void testFacturaDetalleSave(){
         Optional<Factura> factura = facturaRepository.findById(1);
         assertTrue(factura.isPresent());
 

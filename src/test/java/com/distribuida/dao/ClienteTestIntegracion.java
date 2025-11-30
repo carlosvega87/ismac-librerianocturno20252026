@@ -79,8 +79,6 @@ import static org.junit.jupiter.api.Assertions.*;
        clienteRepository.deleteById(39);
     }
     assertFalse(clienteRepository.existsById(39));
-
-
     }
     }
 

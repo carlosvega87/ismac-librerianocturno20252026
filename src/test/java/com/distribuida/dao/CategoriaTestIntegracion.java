@@ -12,6 +12,8 @@ import org.springframework.test.annotation.Rollback;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Transactional
@@ -22,32 +24,49 @@ public class CategoriaTestIntegracion{
     @Test
     public void testCategoriaFindAll() {
         List<Categoria> categorias = categoriaRepository.findAll();
+        assertNotNull(categorias);
+        assertTrue(categorias.size()> 0);
         for (Categoria item : categorias) {
             System.out.println(item.toString());
         }
     }
     @Test
     public void testCategoriaFindOne(){
-        Optional<Categoria> categoria= categoriaRepository.findById(1);
+        Optional<Categoria> categoria= categoriaRepository.findById(7);
+        assertNotNull(categoria.isPresent());
+        assertEquals("Novela",categoria.orElse(null).getCategoria());
+        assertEquals("Autobiografia",categoria.orElse(null).getDescripcion());
         System.out.println(categoria);
 
     }
     @Test
     public void testCategoriaSave(){
         Categoria categoria =new Categoria(0,"Terror","cuentos reales");
-        categoriaRepository.save(categoria);
+       Categoria categoriaGuardado= categoriaRepository.save(categoria);
+       assertNotNull(categoriaGuardado);
+       assertEquals("Terror",categoriaGuardado.getCategoria());
+       assertEquals("cuentos reales",categoriaGuardado.getDescripcion());
 
     }
 @Test
     public void testCategoriaActualizar(){
-   Optional<Categoria> categoria = categoriaRepository.findById(58);
-            categoria.orElse(null).setCategoria("Drama");
-            categoria.orElse(null).setDescripcion("Casos ficticios");
+   Optional<Categoria> categoria = categoriaRepository.findById(59);
+        assertTrue(categoria.isPresent());
+        categoria.orElse(null).setCategoria("Drama");
+        categoria.orElse(null).setDescripcion("Casos ficticios");
+        Categoria categoriaActualizado = categoriaRepository.save(categoria.orElse(null));
 
+        assertNotNull(categoriaActualizado);
+        assertEquals("Drama",categoriaActualizado.getCategoria());
+        assertEquals("Casos ficticios",categoriaActualizado.getDescripcion());
 }
 @Test
     public void testCategoriaBorrar(){
-       categoriaRepository.deleteById(58);
+        categoriaRepository.deleteById(59);
+        if(categoriaRepository.existsById(59)){
+            categoriaRepository.deleteById(59);
+    }
+        assertFalse(categoriaRepository.existsById(59));
 }
 
 
