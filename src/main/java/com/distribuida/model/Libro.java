@@ -35,7 +35,7 @@ public class Libro {
     private String presentacion;
     @Column (name = "precio")
     private Double precio;
-
+    // inyeccion de dependencias
     @ManyToOne
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
