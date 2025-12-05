@@ -55,9 +55,9 @@ public class FacturaDetalleTestUnitaria {
         facturaDetalle.setIdFacDetalle(2);
         facturaDetalle.setCantidad(20);
         facturaDetalle.setSubtotal(15.00);
-
         facturaDetalle.setLibro(libro);
         facturaDetalle.setFactura(factura);
+
         assertAll("Validar Setters - FacturaDetalle",
                 ()->assertEquals(2,facturaDetalle.getIdFacDetalle()),
                 ()->assertEquals(20,facturaDetalle.getCantidad()),
