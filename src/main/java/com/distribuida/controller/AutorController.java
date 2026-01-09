@@ -35,7 +35,19 @@ public class AutorController {
         Autor autorNuevo = autorService.save(autor);
         return  ResponseEntity.ok(autorNuevo);
     }
-
+    @PutMapping("/{id}")
+    public  ResponseEntity<Autor> update(@PathVariable int id , @RequestBody Autor autor){
+        Autor autorActualizado = autorService.update(id ,autor);
+        if(autorActualizado==null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(autorActualizado);
+}
+    @DeleteMapping ("/{id}")
+    public ResponseEntity<Void> delete (@PathVariable int id){
+        autorService.delete(id);
+        return  ResponseEntity.noContent().build();
+    }
 
 
 }

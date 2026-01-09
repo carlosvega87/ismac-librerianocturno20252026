@@ -40,11 +40,11 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Cliente> update(@PathVariable int id , @RequestBody Cliente cliente){
-        Cliente clienteActualizdo = clienteService.update(id,cliente);
-        if( clienteActualizdo== null){
+        Cliente clienteActualizado = clienteService.update(id,cliente);
+        if( clienteActualizado== null){
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(clienteActualizdo);
+        return ResponseEntity.ok(clienteActualizado);
     }
 @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id ){
