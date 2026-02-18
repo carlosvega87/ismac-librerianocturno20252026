@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "libro")
 public class Libro {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id_libro")
-    private int idlibro;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column (name = "id_libro")
+        private int idlibro;
     @Column (name = "titulo")
     private String titulo;
     @Column (name = "editorial")
